@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Байланыс - QazArch</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<!-- Навигация -->
+<nav class="navbar">
+    <div class="logo">
+        <h1><a href="/" style="text-decoration: none; color: inherit;">QazArch</a></h1>
+        <p data-translate="nav.tagline">Өткенді зерттейміз — болашақты құрамыз!</p>
+    </div>
+    <ul class="nav-links">
+        <li><a href="/" data-translate="nav.home"><i class="fas fa-home"></i> Басты бет</a></li>
+        <li><a href="/database" data-translate="nav.database"><i class="fas fa-database"></i> Деректер базасы</a></li>
+        <li><a href="/eras" data-translate="nav.eras"><i class="fas fa-history"></i> Дәуірлер</a></li>
+        <li><a href="/archaeologists" data-translate="nav.archaeologists"><i class="fas fa-users"></i> Археологтар</a></li>
+        <li><a href="/students" data-translate="nav.students"><i class="fas fa-graduation-cap"></i> Оқушылар</a></li>
+        <li><a href="/about" data-translate="nav.about"><i class="fas fa-info-circle"></i> Біз туралы</a></li>
+        <li><a href="/contact" data-translate="nav.contact"><i class="fas fa-envelope"></i> Байланыс</a></li>
+    </ul>
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="kk">Қаз</button>
+        <button class="lang-btn" data-lang="ru">Рус</button>
+        <button class="lang-btn" data-lang="en">Eng</button>
+    </div>
+</nav>
+
+<!-- Контакты -->
+<section class="contact-section" style="padding-top: 2rem;">
+    <h2 class="section-title" data-translate="contact.title"><i class="fas fa-envelope"></i> Байланыс</h2>
+    <div class="contact-container">
+        <div class="contact-form">
+            <h3 data-translate="contact.form.title">Хабарлама жіберу</h3>
+            <form id="contactForm">
+                <input type="text" data-translate-placeholder="contact.name.placeholder" placeholder="Аты-жөніңіз" required>
+                <input type="email" data-translate-placeholder="contact.email.placeholder" placeholder="Электронды пошта" required>
+                <textarea data-translate-placeholder="contact.message.placeholder" placeholder="Хабарламаңыз..." rows="5" required></textarea>
+                <button type="submit" class="submit-btn" data-translate="contact.submit">Жіберу <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h3 data-translate="contact.info.title">Бізбен байланысу</h3>
+            <p><i class="fas fa-envelope"></i> info@qazarch.kz</p>
+            <p><i class="fas fa-phone"></i> +7 (777) 123-45-67</p>
+            <p><i class="fas fa-map-marker-alt"></i> Нұр-Сұлтан, Қазақстан</p>
+
+            <div class="partners">
+                <h4 data-translate="contact.partners">Серіктестер:</h4>
+                <div class="partner-logos">
+                    <div class="partner-logo" data-translate="contact.partner1">Мәдениет министрлігі</div>
+                    <div class="partner-logo" data-translate="contact.partner2">Ұлттық музей</div>
+                    <div class="partner-logo" data-translate="contact.partner3">Археология институты</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Футер -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <h2>QazArch</h2>
+            <p data-translate="footer.tagline">Өткенді зерттейміз — болашақты құрамыз!</p>
+        </div>
+        <div class="footer-links">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
+        </div>
+        <p class="copyright" data-translate="footer.copyright">© 2026 QazArch. Барлық құқықтар қорғалған.</p>
+    </div>
+</footer>
+
+<script src="translations.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

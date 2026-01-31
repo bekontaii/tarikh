@@ -16,6 +16,30 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+app.get('/database', (req, res) => {
+    res.sendFile(path.join(__dirname, 'database.html'));
+});
+
+app.get('/eras', (req, res) => {
+    res.sendFile(path.join(__dirname, 'eras.html'));
+});
+
+app.get('/archaeologists', (req, res) => {
+    res.sendFile(path.join(__dirname, 'archaeologists.html'));
+});
+
+app.get('/students', (req, res) => {
+    res.sendFile(path.join(__dirname, 'students.html'));
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'about.html'));
+});
+
+app.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, 'contact.html'));
+});
+
 // API для получения данных об артефактах
 app.get('/api/artifacts', (req, res) => {
     const artifacts = [
@@ -99,6 +123,44 @@ app.post('/api/contact', (req, res) => {
         success: true,
         message: 'Хабарламаңыз сәтті жіберілді!',
         timestamp: new Date().toISOString()
+    });
+});
+
+// API для форума - получение тем
+app.get('/api/forum/topics', (req, res) => {
+    const topics = [
+        {
+            id: 1,
+            title: 'Қарақабақ қазба жұмыстарының нәтижелері',
+            author: 'Археолог А.Е. Астафьев',
+            date: '2 күн бұрын',
+            preview: 'Қарақабақ ауылындағы қазба жұмыстарының алғашқы нәтижелері...',
+            comments: 12,
+            views: 45
+        },
+        {
+            id: 2,
+            title: 'Остеологиялық материалдарды талдау әдістері',
+            author: 'Ғалым Е.С. Богданов',
+            date: '5 күн бұрын',
+            preview: 'Сүйек қалдықтарын зерттеудің заманауи әдістері...',
+            comments: 8,
+            views: 32
+        }
+    ];
+    res.json(topics);
+});
+
+// API для форума - создание новой темы
+app.post('/api/forum/topics', (req, res) => {
+    const { title, content, author } = req.body;
+    
+    console.log('Новая тема форума:', { title, content, author });
+    
+    res.json({
+        success: true,
+        message: 'Тақырып сәтті қосылды!',
+        topicId: Date.now()
     });
 });
 

@@ -3,196 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QazArch - Қазақстанның тарихи мұрасы</title>
+    <title id="page-title">QazArch - Қазақстанның тарихи мұрасы</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Web-компонент для отображения 3D модели -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
 <!-- Навигация -->
 <nav class="navbar">
     <div class="logo">
-        <h1>QazArch</h1>
-        <p>Өткенді зерттейміз — болашақты құрамыз!</p>
+        <h1><a href="/" style="text-decoration: none; color: inherit;">QazArch</a></h1>
+        <p data-translate="nav.tagline">Өткенді зерттейміз — болашақты құрамыз!</p>
     </div>
     <ul class="nav-links">
-        <li><a href="#home"><i class="fas fa-home"></i> Басты бет</a></li>
-        <li><a href="#museum"><i class="fas fa-museum"></i> 3D Мұражай</a></li>
-        <li><a href="#map"><i class="fas fa-map-marked-alt"></i> Карта</a></li>
-        <li><a href="#about"><i class="fas fa-info-circle"></i> Біз туралы</a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i> Байланыс</a></li>
+        <li><a href="/" data-translate="nav.home"><i class="fas fa-home"></i> Басты бет</a></li>
+        <li><a href="/database" data-translate="nav.database"><i class="fas fa-database"></i> Деректер базасы</a></li>
+        <li><a href="/eras" data-translate="nav.eras"><i class="fas fa-history"></i> Дәуірлер</a></li>
+        <li><a href="/archaeologists" data-translate="nav.archaeologists"><i class="fas fa-users"></i> Археологтар</a></li>
+        <li><a href="/students" data-translate="nav.students"><i class="fas fa-graduation-cap"></i> Оқушылар</a></li>
+        <li><a href="/about" data-translate="nav.about"><i class="fas fa-info-circle"></i> Біз туралы</a></li>
+        <li><a href="/contact" data-translate="nav.contact"><i class="fas fa-envelope"></i> Байланыс</a></li>
     </ul>
     <div class="language-switcher">
-        <button class="lang-btn active">Қаз</button>
-        <button class="lang-btn">Рус</button>
-        <button class="lang-btn">Eng</button>
+        <button class="lang-btn active" data-lang="kk">Қаз</button>
+        <button class="lang-btn" data-lang="ru">Рус</button>
+        <button class="lang-btn" data-lang="en">Eng</button>
     </div>
 </nav>
 
 <!-- Герой-секция -->
 <section class="hero" id="home">
     <div class="hero-content">
-        <h2>Қазақстанның тарихи мұрасын цифрлық әлемге тасымалдау</h2>
-        <p>3D технологиялар арқылы ежелгі артефактілерді виртуалды зерттеңіз</p>
-        <a href="#museum" class="cta-button">Мұражайға өту <i class="fas fa-arrow-right"></i></a>
-    </div>
-    <div class="hero-visual">
-        <!-- Здесь позже будет 3D модель -->
-        <div class="model-placeholder">
-            <i class="fas fa-monument"></i>
-            <p>3D модель жүктелуде...</p>
-        </div>
-    </div>
-</section>
-
-<!-- Раздел 3D музея -->
-<section class="museum-section" id="museum">
-    <h2 class="section-title"><i class="fas fa-vr-cardboard"></i> Виртуалды 3D Мұражай</h2>
-    <div class="museum-categories">
-        <div class="category-card" data-era="saki">
-            <div class="category-icon">
-                <i class="fas fa-crown"></i>
-            </div>
-            <h3>Сақ дәуірі</h3>
-            <p>Алтын адам және сақ мәдениетінің артефактілері</p>
-            <span class="artifact-count">12 экспонат</span>
-        </div>
-
-        <div class="category-card" data-era="turkic">
-            <div class="category-icon">
-                <i class="fas fa-horse"></i>
-            </div>
-            <h3>Түркі қағанаты</h3>
-            <p>Ежелгі түркілердің мәдени мұрасы</p>
-            <span class="artifact-count">8 экспонат</span>
-        </div>
-
-        <div class="category-card" data-era="golden-horde">
-            <div class="category-icon">
-                <i class="fas fa-chess-rook"></i>
-            </div>
-            <h3>Алтын Орда</h3>
-            <p>Ортағасырлық қалалар мен өнер туындылары</p>
-            <span class="artifact-count">15 экспонат</span>
-        </div>
-
-        <div class="category-card" data-era="kazakh-khanate">
-            <div class="category-icon">
-                <i class="fas fa-landmark"></i>
-            </div>
-            <h3>Қазақ хандығы</h3>
-            <p>Хандар дәуірінің тарихи заттары</p>
-            <span class="artifact-count">10 экспонат</span>
+        <h2 data-translate="hero.title">Өткенді зерттейміз — болашақты құрамыз!</h2>
+        <p data-translate="hero.description"><strong>QazArch</strong> — бұл археологтар мен жастарға арналған онлайн платформа. Мұнда Қазақстандағы ежелгі мәдениеттер туралы сенімді, нақты және қолжетімді ақпарат жинақталған.</p>
+        <p class="hero-subtitle" data-translate="hero.subtitle">Зертте, үйрен, бөліс!</p>
+        <div class="hero-buttons">
+            <a href="/database" class="cta-button" data-translate="hero.btn.database">Деректер базасы <i class="fas fa-database"></i></a>
+            <a href="/eras" class="cta-button secondary" data-translate="hero.btn.eras">Дәуірлер <i class="fas fa-history"></i></a>
         </div>
     </div>
 
-    <!-- 3D просмотрщик (заглушка) -->
-    <div class="viewer-container">
-        <div class="viewer-header">
-            <h3>Қазіргі экспонат: <span id="artifact-name">Алтын адам қаңқасы</span></h3>
-            <div class="viewer-controls">
-                <button class="view-btn"><i class="fas fa-rotate-left"></i> Айналдыру</button>
-                <button class="view-btn"><i class="fas fa-search-plus"></i> Үлкейту</button>
-                <button class="view-btn"><i class="fas fa-volume-up"></i> Аудио</button>
-                <button class="view-btn ar-btn"><i class="fas fa-mobile-alt"></i> AR режим</button>
-            </div>
-        </div>
-        <div class="model-viewer" id="model-viewer">
-            <model-viewer id="museum-3d"
-                          src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-                          alt="Қазақстан музейінің 3D моделі"
-                          camera-controls
-                          auto-rotate
-                          ar
-                          ar-modes="webxr scene-viewer quick-look"
-                          shadow-intensity="1"
-                          exposure="1">
-            </model-viewer>
-        </div>
-        <div class="artifact-info">
-            <h4>Экспонат туралы ақпарат</h4>
-            <p><strong>Тарихи кезең:</strong> Б.з.б. 5-4 ғасырлар (Сақ дәуірі)</p>
-            <p><strong>Табылған жері:</strong> Есік қорғаны, Алматы облысы</p>
-            <p><strong>Сипаттама:</strong> "Алтын адам" — сақ патшасының жас жауынгерінің қаңқасы, 4000-нан астам алтын бұйымдармен бірге табылған.</p>
-            <a href="#" class="more-info">Толығырақ оқу <i class="fas fa-book-open"></i></a>
-        </div>
-    </div>
-</section>
-
-<!-- Карта памятников -->
-<section class="map-section" id="map">
-    <h2 class="section-title"><i class="fas fa-map"></i> Археологиялық ескерткіштер картасы</h2>
-    <div class="map-container">
-        <div class="map-placeholder">
-            <i class="fas fa-globe-asia"></i>
-            <p>Интерактивті карта жүктелуде...</p>
-            <p>Қазіргі уақытта: <strong>120+</strong> археологиялық нысан</p>
-        </div>
-        <div class="map-legend">
-            <h4>Аңғартулар:</h4>
-            <div class="legend-item"><span class="legend-dot bronze-age"></span> Қола дәуірі</div>
-            <div class="legend-item"><span class="legend-dot iron-age"></span> Темір дәуірі</div>
-            <div class="legend-item"><span class="legend-dot middle-ages"></span> Орта ғасырлар</div>
-            <div class="legend-item"><span class="legend-dot unesco"></span> ЮНЕСКО нысандары</div>
-        </div>
-    </div>
 </section>
 
 <!-- О проекте -->
 <section class="about-section" id="about">
-    <h2 class="section-title"><i class="fas fa-bullseye"></i> Біздің жобаның мақсаты</h2>
+    <h2 class="section-title" data-translate="goals.title"><i class="fas fa-bullseye"></i> Біздің жобаның мақсаты</h2>
     <div class="goals-container">
         <div class="goal-card">
-            <div class="goal-number">1</div>
-            <h3>Процестерді оңтайландыру</h3>
-            <p>3D моделдер, сканерленген объектілер мен карталар арқылы зерттеу процестерін жеңілдету</p>
+            <div class="goal-number">⚙️</div>
+            <h3 data-translate="goals.optimize.title">Процестерді оңтайландыру</h3>
+            <p data-translate="goals.optimize.text">3D модельдер, сканерленген объектілер мен карталар арқылы зерттеушілерге материалдарды талдауды жеңілдету.</p>
         </div>
         <div class="goal-card">
-            <div class="goal-number">2</div>
-            <h3>Ынтымақтастық</h3>
-            <p>Ғалымдар, археологтар және басқа мамандар арасында ақпарат алмасуды жеңілдету</p>
+            <div class="goal-number">🤝</div>
+            <h3 data-translate="goals.collaboration.title">Ынтымақтастық</h3>
+            <p data-translate="goals.collaboration.text">Ғалымдар, археологтар және басқа мамандар арасында ақпарат алмасу және тәжірибе бөлісуді қамтамасыз ету.</p>
         </div>
         <div class="goal-card">
-            <div class="goal-number">3</div>
-            <h3>Білім беру</h3>
-            <p>Студенттер мен мұғалімдерге арналған интерактивті оқу материалдарын жасау</p>
+            <div class="goal-number">🎓</div>
+            <h3 data-translate="goals.education.title">Білім беру</h3>
+            <p data-translate="goals.education.text">Студенттер мен мұғалімдерге арналған оқу материалдары мен зерттеу әдістерін ұсыну.</p>
         </div>
         <div class="goal-card">
-            <div class="goal-number">4</div>
-            <h3>Мұраны сақтау</h3>
-            <p>Еліміздің тарихи-мәдени мұрасын цифрлық түрде сақтау және насихаттау</p>
-        </div>
-    </div>
-</section>
-
-<!-- Контакты -->
-<section class="contact-section" id="contact">
-    <h2 class="section-title"><i class="fas fa-envelope"></i> Байланыс</h2>
-    <div class="contact-container">
-        <div class="contact-form">
-            <h3>Хабарлама жіберу</h3>
-            <form id="contactForm">
-                <input type="text" placeholder="Аты-жөніңіз" required>
-                <input type="email" placeholder="Электронды пошта" required>
-                <textarea placeholder="Хабарламаңыз..." rows="5" required></textarea>
-                <button type="submit" class="submit-btn">Жіберу <i class="fas fa-paper-plane"></i></button>
-            </form>
-        </div>
-        <div class="contact-info">
-            <h3>Бізбен байланысу</h3>
-            <p><i class="fas fa-envelope"></i> info@qazarch.kz</p>
-            <p><i class="fas fa-phone"></i> +7 (777) 123-45-67</p>
-            <p><i class="fas fa-map-marker-alt"></i> Нұр-Сұлтан, Қазақстан</p>
-
-            <div class="partners">
-                <h4>Серіктестер:</h4>
-                <div class="partner-logos">
-                    <div class="partner-logo">Мәдениет министрлігі</div>
-                    <div class="partner-logo">Ұлттық музей</div>
-                    <div class="partner-logo">Археология институты</div>
-                </div>
-            </div>
+            <div class="goal-number">🏛️</div>
+            <h3 data-translate="goals.preservation.title">Мұраны сақтау</h3>
+            <p data-translate="goals.preservation.text">Еліміздің тарихи-мәдени мұрасын тиімді сақтауға және зерттеуге үлес қосу.</p>
         </div>
     </div>
 </section>
@@ -202,18 +76,19 @@
     <div class="footer-content">
         <div class="footer-logo">
             <h2>QazArch</h2>
-            <p>Өткенді зерттейміз — болашақты құрамыз!</p>
+            <p data-translate="footer.tagline">Өткенді зерттейміз — болашақты құрамыз!</p>
         </div>
         <div class="footer-links">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
         </div>
-        <p class="copyright">© 2026 QazArch. Барлық құқықтар қорғалған.</p>
+        <p class="copyright" data-translate="footer.copyright">© 2026 QazArch. Барлық құқықтар қорғалған.</p>
     </div>
 </footer>
 
+<script src="translations.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

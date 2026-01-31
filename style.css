@@ -63,8 +63,14 @@ body {
     gap: 0.5rem;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--primary);
+}
+
+.nav-links a.active {
+    font-weight: bold;
+    border-bottom: 2px solid var(--primary);
 }
 
 .language-switcher {
@@ -111,8 +117,52 @@ body {
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     opacity: 0.9;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 1.5rem 0;
+    color: var(--secondary);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cta-button.secondary {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    max-width: 500px;
+}
+
+.hero-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s;
+}
+
+.hero-img:hover {
+    transform: scale(1.05);
+    z-index: 10;
 }
 
 .cta-button {
@@ -170,233 +220,18 @@ body {
     gap: 1rem;
 }
 
-/* Музейные категории */
-.museum-categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 0 5%;
-    margin-bottom: 4rem;
-}
 
-.category-card {
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-}
-
-.category-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.category-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    color: white;
-    font-size: 2rem;
-}
-
-.category-card h3 {
-    color: var(--primary-dark);
-    margin-bottom: 0.5rem;
-}
-
-.artifact-count {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.3rem 1rem;
-    background-color: var(--secondary);
-    border-radius: 20px;
-    font-weight: bold;
-    color: var(--dark);
-}
-
-/* 3D просмотрщик */
-.viewer-container {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    margin: 0 5% 5rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.viewer-header {
-    background-color: var(--primary-dark);
-    color: white;
-    padding: 1.5rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.viewer-controls {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.view-btn {
-    padding: 0.5rem 1.2rem;
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: background 0.3s;
-}
-
-.view-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
-
-.ar-btn {
-    background-color: var(--secondary);
-    color: var(--dark);
-}
-
-.model-viewer {
-    height: 500px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-/* Элемент 3D-модели музея */
-model-viewer {
-    width: 100%;
-    height: 100%;
-    border: none;
-    --poster-color: transparent;
-}
-
-.loading-model {
-    text-align: center;
-    color: white;
-}
-
-.spinner {
-    width: 60px;
-    height: 60px;
-    border: 5px solid rgba(255, 255, 255, 0.3);
-    border-top-color: white;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 1rem;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-.model-hint {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    margin-top: 1rem;
-}
-
-.artifact-info {
-    padding: 2rem;
-    background-color: #f8f9fa;
-}
-
-.artifact-info h4 {
-    color: var(--primary-dark);
-    margin-bottom: 1rem;
-}
-
-.artifact-info p {
-    margin-bottom: 0.8rem;
-}
-
-.more-info {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 1rem;
-}
-
-/* Карта */
-.map-section {
+/* Цели */
+.about-section {
     padding: 0 5% 5rem;
 }
 
-.map-container {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.map-placeholder {
-    flex: 2;
-    min-height: 400px;
-    background: white;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.map-placeholder i {
-    font-size: 6rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-.map-legend {
-    flex: 1;
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.legend-dot {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin-right: 1rem;
-}
-
-.bronze-age { background-color: #cd7f32; }
-.iron-age { background-color: #a9a9a9; }
-.middle-ages { background-color: #8b4513; }
-.unesco { background-color: #ffd700; }
-
-/* Цели */
 .goals-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    padding: 0 5% 5rem;
+    padding: 0;
+    margin-top: 2rem;
 }
 
 .goal-card {
@@ -535,6 +370,533 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Деректер базасы */
+.database-section {
+    padding: 0 5% 5rem;
+    background-color: #f8f9fa;
+}
+
+.database-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.database-item {
+    background: white;
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.database-item h3 {
+    color: var(--primary-dark);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 0.5rem;
+}
+
+.database-meta {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.database-meta p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gray);
+}
+
+.database-content {
+    line-height: 1.8;
+}
+
+.database-content p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.database-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: 15px;
+}
+
+.stat-item {
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.database-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.db-img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.database-burial {
+    background-color: #fff9e6;
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary);
+    margin-top: 2rem;
+}
+
+.database-burial h4 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+/* Дәуірлер */
+.eras-section {
+    padding: 0 5% 5rem;
+}
+
+.eras-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.era-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.era-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.era-icon {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.era-card h3 {
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.era-subtitle {
+    text-align: center;
+    color: var(--gray);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.era-content {
+    line-height: 1.8;
+}
+
+.era-content p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.era-periods {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+}
+
+.era-periods ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+.era-periods li {
+    margin-bottom: 0.5rem;
+}
+
+.era-tools {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e9ecef;
+}
+
+.era-tools h4 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.tool-item {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tool-item span {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.tool-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Археологтар форум */
+.archaeologists-section {
+    padding: 0 5% 5rem;
+    background-color: #f8f9fa;
+}
+
+.forum-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.forum-sidebar {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 2rem 1rem;
+}
+
+.forum-sidebar h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.forum-categories {
+    list-style: none;
+}
+
+.forum-categories li {
+    margin-bottom: 0.5rem;
+}
+
+.forum-cat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.forum-cat:hover,
+.forum-cat.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.forum-main {
+    padding: 2rem;
+}
+
+.forum-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.forum-header h3 {
+    color: var(--primary-dark);
+}
+
+.btn-new-topic {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.3s;
+}
+
+.btn-new-topic:hover {
+    background-color: var(--primary-dark);
+}
+
+.forum-topics {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.forum-topic {
+    display: grid;
+    grid-template-columns: 60px 1fr 100px;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.forum-topic:hover {
+    background-color: #e9ecef;
+}
+
+.topic-avatar {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.topic-content h4 {
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.topic-content h4:hover {
+    color: var(--primary);
+}
+
+.topic-meta {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-bottom: 0.5rem;
+}
+
+.topic-preview {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.topic-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+    font-size: 0.85rem;
+    color: var(--gray);
+}
+
+.topic-stats span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* Оқушылар - Тесты */
+.students-section {
+    padding: 0 5% 5rem;
+}
+
+.students-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.test-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.test-intro h3 {
+    color: var(--primary-dark);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.test-intro p {
+    color: var(--gray);
+    font-size: 1.1rem;
+}
+
+.tests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.test-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.test-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.test-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.test-card h4 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.test-card p {
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+.test-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.test-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Біз туралы - команда */
+.about-section {
+    padding: 2rem 5% 5rem;
+}
+
+.about-team {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.team-title {
+    text-align: center;
+    color: var(--primary-dark);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+
+.team-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.team-text {
+    line-height: 2;
+    text-align: justify;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.team-text p {
+    margin-bottom: 1.8rem;
+    font-size: 1.05rem;
+    color: #333;
+    text-align: justify;
+    text-indent: 0;
+}
+
+.team-text p:first-child {
+    margin-top: 0;
+}
+
+.team-text strong {
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.team-signature {
+    font-weight: bold;
+    color: var(--primary);
+    margin-top: 2.5rem;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.team-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.team-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    object-fit: cover;
+}
+
+.team-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
 /* Адаптивность */
 @media (max-width: 992px) {
     .hero {
@@ -562,7 +924,55 @@ footer {
         font-size: 2rem;
     }
 
-    .museum-categories, .goals-container {
+    .goals-container, .eras-container, .tests-grid {
         grid-template-columns: 1fr;
+    }
+
+    .hero-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .forum-container {
+        grid-template-columns: 1fr;
+    }
+
+    .forum-sidebar {
+        order: 2;
+    }
+
+    .forum-main {
+        order: 1;
+    }
+
+    .forum-topic {
+        grid-template-columns: 50px 1fr;
+    }
+
+    .topic-stats {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-top: 1rem;
+    }
+
+    .team-content {
+        grid-template-columns: 1fr;
+    }
+
+    .team-gallery {
+        grid-template-columns: 1fr;
+        margin-top: 2rem;
+    }
+
+    .team-text {
+        padding: 2rem;
+    }
+
+    .database-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
     }
 }

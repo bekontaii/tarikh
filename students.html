@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Оқушылар - QazArch</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<!-- Навигация -->
+<nav class="navbar">
+    <div class="logo">
+        <h1><a href="/" style="text-decoration: none; color: inherit;">QazArch</a></h1>
+        <p data-translate="nav.tagline">Өткенді зерттейміз — болашақты құрамыз!</p>
+    </div>
+    <ul class="nav-links">
+        <li><a href="/" data-translate="nav.home"><i class="fas fa-home"></i> Басты бет</a></li>
+        <li><a href="/database" data-translate="nav.database"><i class="fas fa-database"></i> Деректер базасы</a></li>
+        <li><a href="/eras" data-translate="nav.eras"><i class="fas fa-history"></i> Дәуірлер</a></li>
+        <li><a href="/archaeologists" data-translate="nav.archaeologists"><i class="fas fa-users"></i> Археологтар</a></li>
+        <li><a href="/students" data-translate="nav.students"><i class="fas fa-graduation-cap"></i> Оқушылар</a></li>
+        <li><a href="/about" data-translate="nav.about"><i class="fas fa-info-circle"></i> Біз туралы</a></li>
+        <li><a href="/contact" data-translate="nav.contact"><i class="fas fa-envelope"></i> Байланыс</a></li>
+    </ul>
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="kk">Қаз</button>
+        <button class="lang-btn" data-lang="ru">Рус</button>
+        <button class="lang-btn" data-lang="en">Eng</button>
+    </div>
+</nav>
+
+<!-- Оқушылар - Тесты -->
+<section class="students-section" style="padding-top: 2rem;">
+    <h2 class="section-title" data-translate="students.title"><i class="fas fa-graduation-cap"></i> Оқушылар</h2>
+    <div class="students-container">
+        <div class="test-intro">
+            <h3 data-translate="students.intro.title">Біліміңізді тексеріңіз!</h3>
+            <p data-translate="students.intro.text">Тарих пен археология бойынша тесттер арқылы біліміңізді бағалаңыз</p>
+        </div>
+        <div class="tests-grid">
+            <div class="test-card">
+                <div class="test-icon"><i class="fas fa-question-circle"></i></div>
+                <h4 data-translate="students.test.paleolithic">Палеолит дәуірі</h4>
+                <p data-translate="students.test.paleolithic.desc">Ежелгі тас дәуірі туралы біліміңізді тексеріңіз</p>
+                <a href="https://docs.google.com/forms/d/148RmqUrbqdxVH5zivPnkbt4iRCObhaMzSxRS8X2n-x4/edit" target="_blank" class="test-btn" data-translate="students.test.start">Тестті бастау <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="test-card">
+                <div class="test-icon"><i class="fas fa-question-circle"></i></div>
+                <h4 data-translate="students.test.mesolithic">Мезолит дәуірі</h4>
+                <p data-translate="students.test.mesolithic.desc">Орта тас дәуірі туралы тест</p>
+                <a href="#" class="test-btn" data-translate="students.test.start">Тестті бастау <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="test-card">
+                <div class="test-icon"><i class="fas fa-question-circle"></i></div>
+                <h4 data-translate="students.test.neolithic">Неолит дәуірі</h4>
+                <p data-translate="students.test.neolithic.desc">Жаңа тас дәуірі туралы тест</p>
+                <a href="#" class="test-btn" data-translate="students.test.start">Тестті бастау <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="test-card">
+                <div class="test-icon"><i class="fas fa-question-circle"></i></div>
+                <h4 data-translate="students.test.basics">Археология негіздері</h4>
+                <p data-translate="students.test.basics.desc">Жалпы археология білімі</p>
+                <a href="#" class="test-btn" data-translate="students.test.start">Тестті бастау <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Футер -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <h2>QazArch</h2>
+            <p data-translate="footer.tagline">Өткенді зерттейміз — болашақты құрамыз!</p>
+        </div>
+        <div class="footer-links">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
+        </div>
+        <p class="copyright" data-translate="footer.copyright">© 2026 QazArch. Барлық құқықтар қорғалған.</p>
+    </div>
+</footer>
+
+<script src="translations.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
